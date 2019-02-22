@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -34,19 +35,24 @@ namespace SpeedwayManagerWebAPI.Application.User.Registration
                 Email = request.Email
             };
 
+            _userService.UserManager.PasswordHasher.HashPassword(user, request.Password);
 
             var creationResult = await _userService.UserManager.CreateAsync(user);
 
             if (creationResult.Succeeded)
             {
+                Authenticate.AuthenticateRequest authenticateRequest = new Authenticate.AuthenticateRequest()
+                {
+                    Password = request.Password,
+                    UserName = request.UserName
+                };
 
+                return (RegistrationResponse)await _mediator.Send(authenticateRequest);
             }
             else
             {
-                creationResult.
+                throw new CannotCreateUserException(creationResult.Errors.FirstOrDefault()?.Description);
             }
-
-                return null;
         }
     }
 }
