@@ -1,0 +1,14 @@
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.deps.json
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.csproj.CoreCompileInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.AssemblyInfoInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.AssemblyInfo.cs
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.csprojAssemblyReference.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Domain.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.pdb
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.pdb
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Domain.pdb
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.csproj.CopyComplete
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.pdb

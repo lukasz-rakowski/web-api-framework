@@ -1,0 +1,14 @@
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\bin\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.deps.json
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\bin\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.runtimeconfig.json
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\bin\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.runtimeconfig.dev.json
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\bin\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.csprojAssemblyReference.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.csproj.CoreCompileInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.RazorAssemblyInfo.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.RazorAssemblyInfo.cs
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.AssemblyInfoInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.AssemblyInfo.cs
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.RazorTargetAssemblyInfo.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\bin\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.pdb
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI\obj\Debug\netcoreapp2.1\SpeedwayManagerWebAPI.pdb

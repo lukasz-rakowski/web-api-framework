@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedwayManagerWebAPI", "SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.csproj", "{72737963-5E3B-4D3A-BF79-E8A1B5F71D32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D90D4554-F1FC-488B-8546-F611F8AC8B19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AAC1BAF9-22DE-4386-AA48-DE3B3A83D058}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{38CE661B-9BA4-4134-8C3C-C89929B359BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{351889DF-53A5-445E-B67D-D620C7DD5CDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedwayManagerWebAPI.Common", "SpeedwayManagerWebAPI.Common\SpeedwayManagerWebAPI.Common.csproj", "{82C2D100-9DE5-4477-99E1-29CB7B5008F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedwayManagerWebAPI.Application", "SpeedwayManagerWebAPI.Application\SpeedwayManagerWebAPI.Application.csproj", "{EA6854BF-82CA-4F37-BC54-37A481936C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedwayManagerWebAPI.Domain", "SpeedwayManagerWebAPI.Domain\SpeedwayManagerWebAPI.Domain.csproj", "{628520D2-F356-4243-BDA8-C4CD4E7885BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedwayManagerWebAPI.Infrastructure", "SpeedwayManagerWebAPI.Infrastructure\SpeedwayManagerWebAPI.Infrastructure.csproj", "{13F151F8-BD1B-472F-A879-2A75CE25273F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedwayManagerWebAPI.Persistence", "SpeedwayManagerWebAPI.Persistence\SpeedwayManagerWebAPI.Persistence.csproj", "{11C39A65-401A-4852-92C4-23619721C46A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72737963-5E3B-4D3A-BF79-E8A1B5F71D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72737963-5E3B-4D3A-BF79-E8A1B5F71D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72737963-5E3B-4D3A-BF79-E8A1B5F71D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72737963-5E3B-4D3A-BF79-E8A1B5F71D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C2D100-9DE5-4477-99E1-29CB7B5008F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C2D100-9DE5-4477-99E1-29CB7B5008F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C2D100-9DE5-4477-99E1-29CB7B5008F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C2D100-9DE5-4477-99E1-29CB7B5008F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA6854BF-82CA-4F37-BC54-37A481936C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6854BF-82CA-4F37-BC54-37A481936C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA6854BF-82CA-4F37-BC54-37A481936C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA6854BF-82CA-4F37-BC54-37A481936C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628520D2-F356-4243-BDA8-C4CD4E7885BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628520D2-F356-4243-BDA8-C4CD4E7885BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628520D2-F356-4243-BDA8-C4CD4E7885BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628520D2-F356-4243-BDA8-C4CD4E7885BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F151F8-BD1B-472F-A879-2A75CE25273F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F151F8-BD1B-472F-A879-2A75CE25273F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F151F8-BD1B-472F-A879-2A75CE25273F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F151F8-BD1B-472F-A879-2A75CE25273F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C39A65-401A-4852-92C4-23619721C46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C39A65-401A-4852-92C4-23619721C46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C39A65-401A-4852-92C4-23619721C46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C39A65-401A-4852-92C4-23619721C46A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72737963-5E3B-4D3A-BF79-E8A1B5F71D32} = {351889DF-53A5-445E-B67D-D620C7DD5CDF}
+		{82C2D100-9DE5-4477-99E1-29CB7B5008F1} = {D90D4554-F1FC-488B-8546-F611F8AC8B19}
+		{EA6854BF-82CA-4F37-BC54-37A481936C30} = {AAC1BAF9-22DE-4386-AA48-DE3B3A83D058}
+		{628520D2-F356-4243-BDA8-C4CD4E7885BE} = {AAC1BAF9-22DE-4386-AA48-DE3B3A83D058}
+		{13F151F8-BD1B-472F-A879-2A75CE25273F} = {38CE661B-9BA4-4134-8C3C-C89929B359BF}
+		{11C39A65-401A-4852-92C4-23619721C46A} = {38CE661B-9BA4-4134-8C3C-C89929B359BF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDDF9A62-9716-4124-8988-75DFB1EECA61}
+	EndGlobalSection
+EndGlobal
