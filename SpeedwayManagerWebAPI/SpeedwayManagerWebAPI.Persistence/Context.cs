@@ -16,5 +16,11 @@ namespace SpeedwayManagerWebAPI.Persistence
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(Context).Assembly);
         }
+
+        public DbSet<Club> Clubs { get; set; }
+        public DbSet<League> Leagues { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Stadium> Stadiums { get; set; }
+        public DbSet<ClubStaff> ClubStaff { get; set; }
     }
 }

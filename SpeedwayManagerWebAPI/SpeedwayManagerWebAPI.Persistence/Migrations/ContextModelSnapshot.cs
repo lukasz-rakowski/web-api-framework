@@ -19,10 +19,202 @@ namespace SpeedwayManagerWebAPI.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType");
+
+                    b.Property<string>("ClaimValue");
+
+                    b.Property<int>("RoleId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType");
+
+                    b.Property<string>("ClaimValue");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.Property<string>("LoginProvider");
+
+                    b.Property<string>("ProviderKey");
+
+                    b.Property<string>("ProviderDisplayName");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.Property<int>("UserId");
+
+                    b.Property<int>("RoleId");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.Property<int>("UserId");
+
+                    b.Property<string>("LoginProvider");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.Club", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AccountBalance")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(5000000);
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int>("ClubStaffId");
+
+                    b.Property<string>("ImageRelativePath");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("LeagueId");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int>("Reputation");
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasMaxLength(3);
+
+                    b.Property<int>("StadiumId");
+
+                    b.Property<byte[]>("Timestamp")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClubStaffId");
+
+                    b.HasIndex("LeagueId");
+
+                    b.ToTable("Clubs");
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.ClubStaff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<byte[]>("Timestamp");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClubStaff");
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.League", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Group");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("Level");
+
+                    b.Property<byte[]>("Timestamp");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Leagues");
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.Player", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClubId");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<byte[]>("Timestamp");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClubId");
+
+                    b.ToTable("Players");
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -43,32 +235,45 @@ namespace SpeedwayManagerWebAPI.Persistence.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.Stadium", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClaimType");
+                    b.Property<int>("Capacity");
 
-                    b.Property<string>("ClaimValue");
+                    b.Property<int>("ClubId");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired();
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("LengthInMeters");
+
+                    b.Property<int>("LightingInLuxes");
+
+                    b.Property<string>("Name");
+
+                    b.Property<byte>("SurfaceType");
+
+                    b.Property<byte[]>("Timestamp");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("ClubId")
+                        .IsUnique();
 
-                    b.ToTable("AspNetRoleClaims");
+                    b.ToTable("Stadiums");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.User", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("AccessFailedCount");
+
+                    b.Property<int>("ClubId");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -103,6 +308,9 @@ namespace SpeedwayManagerWebAPI.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClubId")
+                        .IsUnique();
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 
@@ -114,114 +322,85 @@ namespace SpeedwayManagerWebAPI.Persistence.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ClaimType");
-
-                    b.Property<string>("ClaimValue");
-
-                    b.Property<string>("UserId")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
-                {
-                    b.Property<string>("LoginProvider");
-
-                    b.Property<string>("ProviderKey");
-
-                    b.Property<string>("ProviderDisplayName");
-
-                    b.Property<string>("UserId")
-                        .IsRequired();
-
-                    b.HasKey("LoginProvider", "ProviderKey");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserLogins");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.Property<string>("UserId");
-
-                    b.Property<string>("RoleId");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetUserRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
-                {
-                    b.Property<string>("UserId");
-
-                    b.Property<string>("LoginProvider");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Value");
-
-                    b.HasKey("UserId", "LoginProvider", "Name");
-
-                    b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.Club", b =>
+                {
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.ClubStaff", "ClubStaff")
+                        .WithMany()
+                        .HasForeignKey("ClubStaffId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.League", "League")
+                        .WithMany("Clubs")
+                        .HasForeignKey("LeagueId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.Player", b =>
+                {
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.Club", "Club")
+                        .WithMany("Players")
+                        .HasForeignKey("ClubId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.Stadium", b =>
+                {
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.Club", "Club")
+                        .WithOne("Stadium")
+                        .HasForeignKey("SpeedwayManagerWebAPI.Domain.Entities.Stadium", "ClubId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SpeedwayManagerWebAPI.Domain.Entities.User", b =>
+                {
+                    b.HasOne("SpeedwayManagerWebAPI.Domain.Entities.Club", "Club")
+                        .WithOne("User")
+                        .HasForeignKey("SpeedwayManagerWebAPI.Domain.Entities.User", "ClubId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

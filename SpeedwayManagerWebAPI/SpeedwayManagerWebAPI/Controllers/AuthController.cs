@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpeedwayManagerWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/authorize")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace SpeedwayManagerWebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("api/auth/login")]
+        [Route("login")]
         public async Task<IActionResult> Login([FromBody]AuthenticateRequest request)
         {
             try
@@ -33,7 +33,7 @@ namespace SpeedwayManagerWebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("api/auth/register")]
+        [Route("register")]
         public async Task<IActionResult> Register([FromBody]RegistrationRequest request)
         {
             try

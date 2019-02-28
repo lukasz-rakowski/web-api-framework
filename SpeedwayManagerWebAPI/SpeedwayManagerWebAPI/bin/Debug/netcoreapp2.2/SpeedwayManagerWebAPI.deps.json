@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "e76db792ffeeb69f5b4ca01f94b7900153d99409"
+    "signature": "46df113437c0779de48d74b7523a0d160e82a5c1"
   },
   "compilationOptions": {
     "defines": [
@@ -40,6 +40,21 @@
         },
         "compile": {
           "SpeedwayManagerWebAPI.dll": {}
+        }
+      },
+      "AutoMapper/8.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
       "MediatR/6.0.0": {
@@ -904,11 +919,13 @@
       },
       "SpeedwayManagerWebAPI.Application/1.0.0": {
         "dependencies": {
+          "AutoMapper": "8.0.0",
           "MediatR": "6.0.0",
           "Microsoft.AspNetCore.Authorization": "2.2.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "SpeedwayManagerWebAPI.Common": "1.0.0",
           "SpeedwayManagerWebAPI.Domain": "1.0.0",
+          "SpeedwayManagerWebAPI.Persistence": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "5.4.0"
         },
         "runtime": {
@@ -3731,6 +3748,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
+      "path": "automapper/8.0.0",
+      "hashPath": "automapper.8.0.0.nupkg.sha512"
     },
     "MediatR/6.0.0": {
       "type": "package",

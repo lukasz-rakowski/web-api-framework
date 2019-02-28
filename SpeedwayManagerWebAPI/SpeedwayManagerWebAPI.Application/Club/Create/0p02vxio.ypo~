@@ -1,0 +1,35 @@
+﻿using MediatR;
+using SpeedwayManagerWebAPI.Persistence;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Entities = SpeedwayManagerWebAPI.Domain.Entities;
+
+namespace SpeedwayManagerWebAPI.Application.Club.Create
+{
+    public class CreateClubRequestHandler : IRequestHandler<CreateClubRequest, CreateClubResponse>
+    {
+        private readonly Context _context;
+        private readonly IMediator _mediator;
+
+        public CreateClubRequestHandler(Context context)
+        {
+            _context = context;
+        }
+
+        public Task<CreateClubResponse> Handle(CreateClubRequest request, CancellationToken cancellationToken)
+        {
+            var league = _context.Ligues.FirstOrDefault(x => x.Level == _context.Ligues.Max(y => y.Level));
+
+            if(league)
+
+
+            var club = new Entities.Club()
+            {
+                AccountBalance = 1000000,
+                City = request.City,
+                LigueId
+            }
+        }
+    }
+}

@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using SpeedwayManagerWebAPI.Application.Club.Create;
 using SpeedwayManagerWebAPI.Application.Exceptions;
 using AppUser = SpeedwayManagerWebAPI.Domain.Entities.User;
 
@@ -21,18 +22,27 @@ namespace SpeedwayManagerWebAPI.Application.User.Registration
 
         public async Task<RegistrationResponse> Handle(RegistrationRequest request, CancellationToken cancellationToken)
         {
-            if (_userService.UserManager.FindByEmailAsync(request.Email) != null)
+            if (_userService.UserManager.Users.SingleOrDefault(x=>x.Email == request.Email) != null)
             {
                 throw new EmailAddresIsAlreadyUsedException();
             }
-            if (_userService.UserManager.FindByNameAsync(request.UserName) != null)
+            if (_userService.UserManager.Users.SingleOrDefault(x => x.UserName == request.UserName) != null)
             {
                 throw new LoginIsAlreadyUsedException();
             }
             AppUser user = new AppUser()
             {
                 UserName = request.UserName,
-                Email = request.Email
+                Email = request.Email,
+                ClubId = (await _mediator.Send(new CreateClubRequest()
+                {
+                    City = request.ClubCity,
+                    Name = request.ClubName,
+                    ShortName = request.ClubShortName,
+                    StadiumName = request.StadiumName,
+                    StadiumLengthInMeters = 360,
+                    StadiumSurfaceType = Common.Enums.SurfaceType.Normal
+                })).Id
             };
 
             _userService.UserManager.PasswordHasher.HashPassword(user, request.Password);
@@ -47,7 +57,14 @@ namespace SpeedwayManagerWebAPI.Application.User.Registration
                     UserName = request.UserName
                 };
 
-                return (RegistrationResponse)await _mediator.Send(authenticateRequest);
+                var authenticateResult = await _mediator.Send(authenticateRequest);
+                return new RegistrationResponse()
+                {
+                    ExpiredIn = authenticateResult.ExpiredIn,
+                    Token = authenticateResult.Token,
+                    UserId = authenticateResult.UserId,
+                    UserName = authenticateResult.UserName
+                };
             }
             else
             {

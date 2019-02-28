@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "MediatR/6.0.0": {
         "type": "package",
         "compile": {
@@ -4807,11 +4820,13 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "AutoMapper": "8.0.0",
           "MediatR": "6.0.0",
           "Microsoft.AspNetCore.Authorization": "2.2.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "SpeedwayManagerWebAPI.Common": "1.0.0",
           "SpeedwayManagerWebAPI.Domain": "1.0.0",
+          "SpeedwayManagerWebAPI.Persistence": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "5.4.0"
         },
         "compile": {
@@ -4866,6 +4881,23 @@
     }
   },
   "libraries": {
+    "AutoMapper/8.0.0": {
+      "sha512": "kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
+      "type": "package",
+      "path": "automapper/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "MediatR/6.0.0": {
       "sha512": "nQrQ4Ngy5eyS6Oi53e9oreZ8hl6RJOv8ohNExA/QZdnshLySsVUEAAqTDIEOobjPzwQ2itTB5fukdfRV4eGbQQ==",
       "type": "package",

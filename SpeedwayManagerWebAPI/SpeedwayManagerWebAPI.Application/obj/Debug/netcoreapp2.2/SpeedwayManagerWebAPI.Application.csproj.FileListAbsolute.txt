@@ -12,3 +12,5 @@ D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Applicat
 D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.csproj.CopyComplete
 D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.dll
 D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Application.pdb
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Persistence.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Application\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Persistence.pdb
