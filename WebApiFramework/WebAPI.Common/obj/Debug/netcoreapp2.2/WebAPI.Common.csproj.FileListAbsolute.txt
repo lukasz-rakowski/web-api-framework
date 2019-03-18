@@ -1,0 +1,16 @@
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\bin\Debug\netcoreapp2.2\WebAPI.Common.deps.json
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\bin\Debug\netcoreapp2.2\WebAPI.Common.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\bin\Debug\netcoreapp2.2\WebAPI.Common.pdb
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.csproj.CoreCompileInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.AssemblyInfoInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.AssemblyInfo.cs
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.pdb
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\bin\Debug\netcoreapp2.2\WebAPI.Common.deps.json
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\bin\Debug\netcoreapp2.2\WebAPI.Common.dll
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\bin\Debug\netcoreapp2.2\WebAPI.Common.pdb
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.csproj.CoreCompileInputs.cache
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.AssemblyInfoInputs.cache
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.AssemblyInfo.cs
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.dll
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.pdb

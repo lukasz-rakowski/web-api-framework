@@ -1,9 +1,0 @@
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.deps.json
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.dll
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\bin\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.pdb
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.csprojAssemblyReference.cache
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.csproj.CoreCompileInputs.cache
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.AssemblyInfoInputs.cache
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.AssemblyInfo.cs
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.dll
-D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Common\obj\Debug\netcoreapp2.2\SpeedwayManagerWebAPI.Common.pdb

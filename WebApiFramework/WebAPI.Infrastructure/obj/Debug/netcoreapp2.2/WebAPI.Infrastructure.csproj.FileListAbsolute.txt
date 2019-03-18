@@ -1,0 +1,16 @@
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\bin\Debug\netcoreapp2.2\WebAPI.Infrastructure.deps.json
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\bin\Debug\netcoreapp2.2\WebAPI.Infrastructure.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\bin\Debug\netcoreapp2.2\WebAPI.Infrastructure.pdb
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.AssemblyInfoInputs.cache
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.AssemblyInfo.cs
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.dll
+D:\Projects\SpeedwayManager\SpeedwayManagerWebAPI\SpeedwayManagerWebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.pdb
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\bin\Debug\netcoreapp2.2\WebAPI.Infrastructure.deps.json
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\bin\Debug\netcoreapp2.2\WebAPI.Infrastructure.dll
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\bin\Debug\netcoreapp2.2\WebAPI.Infrastructure.pdb
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.AssemblyInfoInputs.cache
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.AssemblyInfo.cs
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.dll
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Infrastructure\obj\Debug\netcoreapp2.2\WebAPI.Infrastructure.pdb
