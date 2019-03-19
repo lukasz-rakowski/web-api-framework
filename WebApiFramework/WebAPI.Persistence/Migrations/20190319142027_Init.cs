@@ -57,10 +57,10 @@ namespace WebAPI.Persistence.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Timestamp = table.Column<byte[]>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    UserId = table.Column<int>(nullable: false, defaultValueSql: "SESSION_CONTEXT(N'user_id')"),
-                    Name = table.Column<int>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: false),
-                    ValidTo = table.Column<DateTime>(nullable: false)
+                    ValidTo = table.Column<DateTime>(nullable: false),
+                    UserId = table.Column<int>(nullable: false, defaultValueSql: "CONVERT(INT, SESSION_CONTEXT(N'user_id'))"),
+                    Name = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

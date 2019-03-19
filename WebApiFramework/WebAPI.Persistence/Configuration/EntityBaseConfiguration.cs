@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WebAPI.Domain.Entities.Base;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WebAPI.Persistence.Configuration
 {

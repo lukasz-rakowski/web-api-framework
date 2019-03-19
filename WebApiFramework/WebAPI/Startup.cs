@@ -1,5 +1,4 @@
-﻿using FluentValidation.AspNetCore;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,12 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Swagger;
+using System.Text;
 using WebAPI.Application.User.Authenticate;
 using WebAPI.Common.Settings;
 using WebAPI.Domain.Entities;
 using WebAPI.Persistence;
-using Swashbuckle.AspNetCore.Swagger;
-using System.Text;
 using WebAPI.Persistence.Configuration;
 
 namespace WebAPI

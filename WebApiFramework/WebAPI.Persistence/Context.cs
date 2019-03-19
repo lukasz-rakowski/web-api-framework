@@ -1,9 +1,7 @@
-﻿using System;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Domain.Entities;
 using WebAPI.Domain.Entities.Base;
-using WebAPI.Persistence.Configuration;
 
 namespace WebAPI.Persistence
 {

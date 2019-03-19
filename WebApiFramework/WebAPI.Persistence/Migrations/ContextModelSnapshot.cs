@@ -193,7 +193,7 @@ namespace WebAPI.Persistence.Migrations
 
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("SESSION_CONTEXT(N'user_id')");
+                        .HasDefaultValueSql("CONVERT(INT, SESSION_CONTEXT(N'user_id'))");
 
                     b.Property<DateTime>("ValidFrom");
 

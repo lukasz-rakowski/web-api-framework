@@ -8,7 +8,7 @@ namespace WebAPI.Persistence.Configuration
     {
         public override void Configure(EntityTypeBuilder<T> builder)
         {
-            builder.Ignore(x => x.UserId).Ignore(x => x.User).Property(x => x.UserId).HasDefaultValueSql("SESSION_CONTEXT(N'user_id')");
+            builder.Ignore(x => x.UserId).Ignore(x => x.User).Property(x => x.UserId).HasDefaultValueSql("CONVERT(INT, SESSION_CONTEXT(N'user_id'))");
         }
     }
 }
