@@ -17,4 +17,8 @@
     <ProjectReference Include="..\WebAPI.Domain\WebAPI.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configuration\EntitiesConfiguration\" />
+  </ItemGroup>
+
 </Project>

@@ -179,31 +179,6 @@ namespace WebAPI.Persistence.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("WebAPI.Persistence.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("IsDeleted");
-
-                    b.Property<int>("Name");
-
-                    b.Property<byte[]>("Timestamp");
-
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("CONVERT(INT, SESSION_CONTEXT(N'user_id'))");
-
-                    b.Property<DateTime>("ValidFrom");
-
-                    b.Property<DateTime>("ValidTo");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Products");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("WebAPI.Domain.Entities.Role")

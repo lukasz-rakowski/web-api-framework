@@ -17,12 +17,5 @@ namespace WebAPI.Persistence
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(Context).Assembly);
         }
-
-        public virtual DbSet<Product> Products { get; set; }
-    }
-
-    public class Product: EntityBaseWithHistory
-    {
-        public int Name { get; set; }
     }
 }

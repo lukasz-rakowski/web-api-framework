@@ -50,24 +50,6 @@ namespace WebAPI.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Timestamp = table.Column<byte[]>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    ValidFrom = table.Column<DateTime>(nullable: false),
-                    ValidTo = table.Column<DateTime>(nullable: false),
-                    UserId = table.Column<int>(nullable: false, defaultValueSql: "CONVERT(INT, SESSION_CONTEXT(N'user_id'))"),
-                    Name = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Products", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -229,9 +211,6 @@ namespace WebAPI.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
