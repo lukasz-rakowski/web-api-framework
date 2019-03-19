@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WebAPI.Persistence;
+using WebAPI.Persistence.Configuration;
 
 namespace WebAPI
 {
@@ -26,7 +27,8 @@ namespace WebAPI
                     var context = scope.ServiceProvider.GetService<Context>();
                     context.Database.Migrate();
 
-                    ContextInitializer.Initialize(context);
+                    var contextConfigurationBuilder = scope.ServiceProvider.GetService<IContextConfigurationBuilder>();
+                    ContextInitializer.Initialize(context, contextConfigurationBuilder);
                 }
                 catch (Exception ex)
                 {

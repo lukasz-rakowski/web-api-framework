@@ -14,3 +14,4 @@ D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.
 D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.AssemblyInfo.cs
 D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.dll
 D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.pdb
+D:\Projects\WebApiFramework\WebApiFramework\WebAPI.Common\obj\Debug\netcoreapp2.2\WebAPI.Common.csprojAssemblyReference.cache

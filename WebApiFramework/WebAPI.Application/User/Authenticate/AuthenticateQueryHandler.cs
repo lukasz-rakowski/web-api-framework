@@ -27,24 +27,9 @@ namespace WebAPI.Application.User.Authenticate
 
         public async Task<AuthenticateResponse> Handle(AuthenticateQuery request, CancellationToken cancellationToken)
         {
-            AppUser user = null;
-            if (request.UserName.Contains('@'))
-                user = _userService.UserManager.Users.SingleOrDefault(x => x.Email == request.UserName);
-            else
-                user = _userService.UserManager.Users.SingleOrDefault(x => x.UserName == request.UserName);
+            AppUser user = GetUser(request);
 
-            if (user == null)
-                throw new UserNotFoundException();
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Value.SecretKey);
-            var expireIn = DateTimeOffset.UtcNow.AddMonths(2).UtcDateTime;
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Expires = expireIn,
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenHandler = CreateToken(out var expireIn, out var token);
 
             return new AuthenticateResponse()
             {
@@ -53,6 +38,34 @@ namespace WebAPI.Application.User.Authenticate
                 UserId = user.Id,
                 UserName = user.UserName
             };
+        }
+
+        private JwtSecurityTokenHandler CreateToken(out DateTime expireIn, out SecurityToken token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Value.SecretKey);
+            expireIn = DateTimeOffset.UtcNow.AddMonths(_appSettings.Value.TokenExpireMonths).UtcDateTime;
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Expires = expireIn,
+                SigningCredentials =
+                    new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler;
+        }
+
+        private AppUser GetUser(AuthenticateQuery request)
+        {
+            AppUser user = null;
+            if (request.UserName.Contains('@'))
+                user = _userService.UserManager.Users.SingleOrDefault(x => x.Email == request.UserName);
+            else
+                user = _userService.UserManager.Users.SingleOrDefault(x => x.UserName == request.UserName);
+
+            if (user == null)
+                throw new UserNotFoundException();
+            return user;
         }
     }
 }

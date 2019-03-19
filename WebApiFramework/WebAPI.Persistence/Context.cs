@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Domain.Entities;
+using WebAPI.Domain.Entities.Base;
+using WebAPI.Persistence.Configuration;
 
 namespace WebAPI.Persistence
 {
@@ -16,5 +19,12 @@ namespace WebAPI.Persistence
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(Context).Assembly);
         }
+
+        public virtual DbSet<Product> Products { get; set; }
+    }
+
+    public class Product: EntityBaseWithHistory
+    {
+        public int Name { get; set; }
     }
 }

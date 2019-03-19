@@ -21,24 +21,22 @@ namespace WebAPI.Application.User.Registration
 
         public async Task<RegistrationResponse> Handle(RegistrationQuery request, CancellationToken cancellationToken)
         {
-            if (_userService.UserManager.Users.SingleOrDefault(x=>x.Email == request.Email) != null)
+            if (UserExistsByEmail(request))
             {
                 throw new EmailAddresIsAlreadyUsedException();
             }
-            if (_userService.UserManager.Users.SingleOrDefault(x => x.UserName == request.UserName) != null)
+            if (UserExistsByUserName(request))
             {
                 throw new LoginIsAlreadyUsedException();
             }
-            AppUser user = new AppUser()
-            {
-                UserName = request.UserName,
-                Email = request.Email
-            };
 
-            _userService.UserManager.PasswordHasher.HashPassword(user, request.Password);
+            var creationResult = await CreateUser(request);
 
-            var creationResult = await _userService.UserManager.CreateAsync(user);
+            return await Authenticate(request, creationResult);
+        }
 
+        private async Task<RegistrationResponse> Authenticate(RegistrationQuery request, IdentityResult creationResult)
+        {
             if (creationResult.Succeeded)
             {
                 Authenticate.AuthenticateQuery authenticateRequest = new Authenticate.AuthenticateQuery()
@@ -48,6 +46,7 @@ namespace WebAPI.Application.User.Registration
                 };
 
                 var authenticateResult = await _mediator.Send(authenticateRequest);
+
                 return new RegistrationResponse()
                 {
                     ExpiredIn = authenticateResult.ExpiredIn,
@@ -60,6 +59,30 @@ namespace WebAPI.Application.User.Registration
             {
                 throw new CannotCreateUserException(creationResult.Errors.FirstOrDefault()?.Description);
             }
+        }
+
+        private async Task<IdentityResult> CreateUser(RegistrationQuery request)
+        {
+            AppUser user = new AppUser()
+            {
+                UserName = request.UserName,
+                Email = request.Email
+            };
+
+            _userService.UserManager.PasswordHasher.HashPassword(user, request.Password);
+
+            var creationResult = await _userService.UserManager.CreateAsync(user);
+            return creationResult;
+        }
+
+        private bool UserExistsByUserName(RegistrationQuery request)
+        {
+            return _userService.UserManager.Users.SingleOrDefault(x => x.UserName == request.UserName) != null;
+        }
+
+        private bool UserExistsByEmail(RegistrationQuery request)
+        {
+            return _userService.UserManager.Users.SingleOrDefault(x=>x.Email == request.Email) != null;
         }
     }
 }

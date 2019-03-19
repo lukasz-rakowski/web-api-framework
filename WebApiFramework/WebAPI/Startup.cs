@@ -15,6 +15,7 @@ using WebAPI.Domain.Entities;
 using WebAPI.Persistence;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Text;
+using WebAPI.Persistence.Configuration;
 
 namespace WebAPI
 {
@@ -40,6 +41,8 @@ namespace WebAPI
 
             services.AddDbContext<Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSingleton<IContextConfigurationBuilder, ContextConfigurationBuilder>();
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
