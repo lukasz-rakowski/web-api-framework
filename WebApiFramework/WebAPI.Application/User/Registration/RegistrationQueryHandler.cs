@@ -69,10 +69,16 @@ namespace WebAPI.Application.User.Registration
                 Email = request.Email
             };
 
-            _userService.UserManager.PasswordHasher.HashPassword(user, request.Password);
+            HashPassword(request, user);
 
             var creationResult = await _userService.UserManager.CreateAsync(user);
             return creationResult;
+        }
+
+        private void HashPassword(RegistrationQuery request, AppUser user)
+        {
+            var passwordHash = _userService.UserManager.PasswordHasher.HashPassword(user, request.Password);
+            user.PasswordHash = passwordHash;
         }
 
         private bool UserExistsByUserName(RegistrationQuery request)

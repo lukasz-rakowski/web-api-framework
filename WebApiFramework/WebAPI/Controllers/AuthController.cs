@@ -1,10 +1,12 @@
-﻿using MediatR;
+﻿using System;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Application.Exceptions;
 using WebAPI.Application.User.Authenticate;
 using WebAPI.Application.User.Registration;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Controllers
 {
@@ -21,15 +23,22 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("login")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Login([FromBody]AuthenticateQuery request)
         {
             try
             {
                 return Ok(await _mediator.Send(request));
             }
-            catch(UserNotFoundException e)
+            catch (IncorrectUserNameOrPasswordException e)
             {
-                return NotFound(e.Message);
+                return BadRequest(e.Message);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
             }
         }
 
@@ -51,10 +60,21 @@ namespace WebAPI.Controllers
             {
                 return BadRequest(e.Message);
             }
-            catch(LoginIsAlreadyUsedException e)
+            catch (LoginIsAlreadyUsedException e)
             {
                 return BadRequest(e.Message);
             }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> Test()
+        {
+            return Ok();
         }
     }
 }

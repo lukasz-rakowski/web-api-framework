@@ -29,6 +29,8 @@ namespace WebAPI.Application.User.Authenticate
         {
             AppUser user = GetUser(request);
 
+            await ValidatePassword(request, user);
+
             var tokenHandler = CreateToken(out var expireIn, out var token);
 
             return new AuthenticateResponse()
@@ -38,6 +40,15 @@ namespace WebAPI.Application.User.Authenticate
                 UserId = user.Id,
                 UserName = user.UserName
             };
+        }
+
+        private async Task ValidatePassword(AuthenticateQuery request, AppUser user)
+        {
+            var result = await _userService.UserManager.CheckPasswordAsync(user, request.Password);
+            if (!result)
+            {
+                throw new IncorrectUserNameOrPasswordException();
+            }
         }
 
         private JwtSecurityTokenHandler CreateToken(out DateTime expireIn, out SecurityToken token)
@@ -64,7 +75,7 @@ namespace WebAPI.Application.User.Authenticate
                 user = _userService.UserManager.Users.SingleOrDefault(x => x.UserName == request.UserName);
 
             if (user == null)
-                throw new UserNotFoundException();
+                throw new IncorrectUserNameOrPasswordException();
             return user;
         }
     }
